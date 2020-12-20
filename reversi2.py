@@ -1,8 +1,20 @@
+""" James McKinnon
+
+    This is a console board game called reversi. The objective of the game is to have the most stones on the board. You are playing against 
+    "machine". You and machine take turns placing stones on the board and you can reverse stones by placing stones on both sides of one or 
+    more machine stones in any direction. Machine can do the same thing to your stones. Multiple stones can be reversed at once in multiple 
+    directions. Only a newly placed stone can reverse opponent stones. When there are no more spots left on the board the game is over and 
+    a winner is named. If there is a tie the winner can be decided by playing rock, paper, scissors against machine."""
+
+
+
 import random
 from neighbours import Row_Decreasing, Row_Increasing, Col_Decreasing, Col_Increasing, Diag_Decreasing, Diag_Increasing, Diag_Rows_Dec_Cols_Inc, Diag_Rows_Inc_Cols_Dec
 
+
+# allows user to specify the board size they want to play with 
 while True:
-    'This while loop makes sure that the user enters a valid input for the number of rows in the board.'
+    # This while loop makes sure that the user enters a valid input for the number of rows in the board.
     try:
         rows = eval(input('Input the rows that you want as the board size (1-9): '))
         if rows in range(1,10):
@@ -12,7 +24,7 @@ while True:
         print('\n*** The row size should be an integer between 1 and 9 ***\n')
 
 while True:
-    'This while loop makes sure that the user enters a valid input for the number of columns in the board'
+    # This while loop makes sure that the user enters a valid input for the number of columns in the board
     try:
         cols = eval(input('Input the cols that you want as the board size (1-9): '))
         if cols in range(1,10):
