@@ -272,7 +272,7 @@ def Diag_Rows_Inc_Cols_Dec(targetRow, targetCol, board, Print_Board, rows, cols,
 --------------
 {},{} reversed 
 --------------
-            """.format(stone[0]+1,stone[1]+1))
+            """.format(stone[0]+1,stone[1]+1)) 
                 Print_Board()
                 reversedStones.append(stone) # stones that have been reversed are added to this list and then used in the reversedStones function
             print()
