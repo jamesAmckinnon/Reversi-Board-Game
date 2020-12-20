@@ -1,19 +1,3 @@
-""" Name: James McKinnon ID: 1670634
-    -  This module contains 9 functions. 8 function checks a direction on the board for stones that can be flipped, 1 function tells 
-       the user information about the stones that have been flipped. The functions are:
-       
-        * Stones_Reversed() - Tells the user information about the stones that have been flipped
-        * Row_Decreasing()  - This function checks each row within the same column above the target stone
-        * Row_Increasing()  - This function checks each row within the same column below the target stone
-        * Col_Decreasing()  - This function checks each column within the same row to the left of the target stone
-        * Col_Increasing()  - This function checks each column within the same row to the right of the target stone
-        * Diag_Decreasing() - This function checks each spot on the board that is diagonal from the target stone. Up and to the left.
-        * Diag_Increasing() - This function checks each spot on the board that is diagonal from the target stone. Down and to the right.
-        * Diag_Rows_Dec_Cols_Inc() - This function checks each spot on the board that is diagonal from the target stone. Up and to the right.
-        * Diag_Rows_Inc_Cols_Dec() - This function checks each spot on the board that is diagonal from the target stone. Down and to the left.""" 
-
-
-
 def Stones_Reversed(execute, reversedStones, whosTurn, targetRow, targetCol):
     """This function takes in a list of reversed stones as input and after all directions have been checked the function prints
        the stones that have been flipped, which stone was placed to cause the reversals and which player placed that stone."""

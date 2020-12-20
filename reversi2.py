@@ -1,10 +1,3 @@
-""" Name: James McKinnon ID: 1670634
-    -  New functions that have been created: 
-         * Live_Score()      - This function displays the number of stones each player has under the board every time the board is printed.
-         * Stones_Reversed() - This function displays information about any stones that have been reversed and the location of the stone that reversed them."""
-
-
-
 import random
 from neighbours import Row_Decreasing, Row_Increasing, Col_Decreasing, Col_Increasing, Diag_Decreasing, Diag_Increasing, Diag_Rows_Dec_Cols_Inc, Diag_Rows_Inc_Cols_Dec
 
