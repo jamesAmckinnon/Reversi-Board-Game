@@ -16,4 +16,4 @@ This is a console board game called reversi. The objective of the game is to hav
 more machine stones in any direction. Machine can do the same thing to your stones and will always place stones beside yours to increase
 it's chances of reversing your stones. Only a newly placed stone can reverse opponent stones and multiple stones in multiple directions 
 can be reversed by placing one stone. When there are no more spots left on the board the game is over and a winner is named. If there is 
-a tie the winner can be decided by playing rock, paper, scissors against machine.
+a tie the winner can be decided by playing rock, paper, scissors against machine. 
