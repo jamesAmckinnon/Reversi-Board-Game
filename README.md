@@ -1,3 +1,16 @@
+
+     1   2   3   4   5   
+   +---+---+---+---+---+
+ 1 |   |   |   |   |   |
+   +---+---+---+---+---+
+ 2 |   |   |   |   |   |
+   +---+---+---+---+---+
+ 3 |   |   |   |   |   |
+   +---+---+---+---+---+
+ 4 |   |   |   |   |   |
+   +---+---+---+---+---+
+   H: 0   M: 0
+
 This is a console board game called reversi. The objective of the game is to have the most stones on the board. You are playing against 
 "machine". You and machine take turns placing stones on the board and you can reverse stones by placing stones on both sides of one or 
 more machine stones in any direction. Machine can do the same thing to your stones and will always place stones beside yours to increase
