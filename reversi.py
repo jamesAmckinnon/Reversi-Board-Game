@@ -2,9 +2,10 @@
 
     This is a console board game called reversi. The objective of the game is to have the most stones on the board. You are playing against 
     "machine". You and machine take turns placing stones on the board and you can reverse stones by placing stones on both sides of one or 
-    more machine stones in any direction. Machine can do the same thing to your stones. Multiple stones can be reversed at once in multiple 
-    directions. Only a newly placed stone can reverse opponent stones. When there are no more spots left on the board the game is over and 
-    a winner is named. If there is a tie the winner can be decided by playing rock, paper, scissors against machine."""
+    more machine stones in any direction. Machine can do the same thing to your stones and will always place stones beside yours to increase
+    it's chances of reversing your stones. Multiple stones in multiple directions can be reversed by placing one stone. Only a newly placed 
+    stone can reverse opponent stones. When there are no more spots left on the board the game is over and a winner is named. If there is a 
+    tie the winner can be decided by playing rock, paper, scissors against machine."""
 
 
 
@@ -59,28 +60,6 @@ def Print_Board():
         print("   " + ("+---"*cols) + "+") # this creates the dividing line between rows
     Live_Score()
 
-
-
-targetRow = 0
-targetCol = 0
-reversedStones = []
-
-
-
-def Reverse_Neighbours(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones):
-    """This function checks 8 directions on the board to see if there are stones that can be reversed. One or more stones will be reversed if they are in between
-       an existing opponent stone and the stone that was just placed on the board. The function calls 8 other functions that each check one direction. The output
-       of each function is an updated copy of the board and reversedStones list and these are passed on to the next function each time a function is called."""
-
-    board, reversedStones = Row_Decreasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones) # this function checks each row within the same column above the target stone
-    board, reversedStones = Row_Increasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones) # this function checks each row within the same column below the target stone
-    board, reversedStones = Col_Decreasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones) # this function checks each column within the same row to the left of the target stone
-    board, reversedStones = Col_Increasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones) # this function checks each column within the same row to the right of the target stone
-    board, reversedStones = Diag_Decreasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones) # this function checks each spot on the board that is diagonal from the target stone. Up and to the left.
-    board, reversedStones = Diag_Increasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones) # this function checks each spot on the board that is diagonal from the target stone. Down and to the right.
-    board, reversedStones = Diag_Rows_Dec_Cols_Inc(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones) # this function checks each spot on the board that is diagonal from the target stone. Up and to the right.
-    board, reversedStones = Diag_Rows_Inc_Cols_Dec(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones) # this function checks each spot on the board that is diagonal from the target stone. Down and to the left.
- 
 
 
 def Human_Turn():
@@ -204,6 +183,28 @@ Machine's Choice is {},{}
         Reverse_Neighbours(targetRow, targetCol, board, Print_Board, rows, cols, 'machine', reversedStones)
     else: # if there are no open spots on the board after machine places stone:
         return
+
+
+
+targetRow = 0
+targetCol = 0
+reversedStones = []
+
+
+
+def Reverse_Neighbours(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones):
+    """This function checks 8 directions on the board to see if there are stones that can be reversed. One or more stones will be reversed if they are in between
+       an existing opponent stone and the stone that was just placed on the board. The function calls 8 other functions that each check one direction. The output
+       of each function is an updated copy of the board and reversedStones list and these are passed on to the next function each time a function is called."""
+
+    board, reversedStones = Row_Decreasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones) # this function checks each row within the same column above the target stone
+    board, reversedStones = Row_Increasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones) # this function checks each row within the same column below the target stone
+    board, reversedStones = Col_Decreasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones) # this function checks each column within the same row to the left of the target stone
+    board, reversedStones = Col_Increasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones) # this function checks each column within the same row to the right of the target stone
+    board, reversedStones = Diag_Decreasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones) # this function checks each spot on the board that is diagonal from the target stone. Up and to the left.
+    board, reversedStones = Diag_Increasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones) # this function checks each spot on the board that is diagonal from the target stone. Down and to the right.
+    board, reversedStones = Diag_Rows_Dec_Cols_Inc(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones) # this function checks each spot on the board that is diagonal from the target stone. Up and to the right.
+    board, reversedStones = Diag_Rows_Inc_Cols_Dec(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones) # this function checks each spot on the board that is diagonal from the target stone. Down and to the left.
 
 
 
