@@ -19,11 +19,7 @@ def Stones_Reversed(execute, reversedStones, whosTurn, targetRow, targetCol):
 
 
 def Row_Decreasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones):
-    """This function checks each row within the same column above the target stone to see if there are one or more stones belonging to the opposite
-       player between one of the current player's existing stones and the one that was just placed on the board. To do this it first checks the row directly above 
-       the target stone, if that stone is empty the function breaks, if it is an opponent stone then that stone is added to the stonesToFlip list and the 
-       function continues. The function will keep adding stones to the stonesToFlip list if they are opponent stones and if the loop gets to a stone that 
-       belongs to the current player without encountering an open space first all opponent stones in the stonesToFlip list will be reversed."""
+    'This function checks each row within the same column above the target stone to see if there are one or more stones that can be reversed.'
 
     print('\n(1) Checking rows in decreasing order on the same column....', end=' ')    
     stonesToFlip = []
@@ -54,11 +50,7 @@ def Row_Decreasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTur
 
 
 def Row_Increasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones):
-    """This function checks each row within the same column below the target stone to see if there are one or more stones belonging to the opposite
-       player between the current players existing stone and the one that was just placed on the board. To do this it first checks the row directly below 
-       the target stone, if that stone is empty the function breaks, if it is an opponent stone then that stone is added to the stonesToFlip list and the 
-       function continues. The function will keep adding stones to the stonesToFlip list if they are opponent stones and if the loop gets to a stone that 
-       belongs to the current player without encountering an open space first all opponent stones in the stonesToFlip list will be reversed."""
+    'This function checks each row within the same column below the target stone to see if there are one or more stones that can be reversed.'
 
     print('(2) Checking rows in increasing order on the same column....', end=' ')
     stonesToFlip = []
@@ -89,11 +81,7 @@ def Row_Increasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTur
 
 
 def Col_Decreasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones): 
-    """This function checks each column within the same row to the left of the target stone to see if there are one or more stones belonging to the opposite
-       player between the current players existing stone and the one that was just placed on the board. To do this it first checks the column directly beside 
-       the target stone, if that stone is empty the function breaks, if it is an opponent stone then that stone is added to the stonesToFlip list and the 
-       function continues. The function will keep adding stones to the stonesToFlip list if they are opponent stones and if the loop gets to a stone that 
-       belongs to the current player without encountering an open space first all opponent stones in the stonesToFlip list will be reversed."""
+    'This function checks each column within the same row to the left of the target stone to see if there are one or more stones that can be reversed.'
 
     print('(3) Checking cols in decreasing order on the same row....', end=' ')    
     stonesToFlip = []
@@ -124,11 +112,7 @@ def Col_Decreasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTur
 
 
 def Col_Increasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones):
-    """This function checks each column within the same row to the right of the target stone to see if there are one or more stones belonging to the opposite
-       player between the current players existing stone and the one that was just placed on the board. To do this it first checks the column directly beside 
-       the target stone, if that stone is empty the function breaks, if it is an opponent stone then that stone is added to the stonesToFlip list and the 
-       function continues. The function will keep adding stones to the stonesToFlip list if they are opponent stones and if the loop gets to a stone that 
-       belongs to the current player without encountering an open space first all opponent stones in the stonesToFlip list will be reversed."""
+    'This function checks each column within the same row to the right of the target stone to see if there are one or more stones that can be reversed.'
 
     print('(4) Checking cols in increasing order on the same row....', end=' ')
     stonesToFlip = []
@@ -160,12 +144,7 @@ def Col_Increasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTur
 
 def Diag_Decreasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones):
     """This function checks each spot on the board that is diagonal from the target stone. The function checks in the diagonal direction that is up and to the 
-       left starting at the target stone. The function checks for opponent stones between the stone that was just placed on the board and the next stone that
-       belongs to the current player if there is one. To do this it first checks the spot directly diagonal to the placed stone and if that spot is empty then 
-       the function breaks, if that spot is an opponent stone then that stone is added to the stonesToFlip list and the function continues. The function will 
-       keep adding stones to the stonesToFlip list if they are opponent stones and if the loop gets to a stone that belongs to the current player without 
-       encountering an open space first all opponent stones in the stonesToFlip list will be reversed. If the function never reaches another current player stone
-       no stones will be reversed and the next direction will be checked."""
+       left starting at the target stone to see if there are one or more stones that can be reversed."""
 
     print('(5) Checking diagonally rows and cols in decreasing order....', end=' ')
     stonesToFlip = []
@@ -200,12 +179,7 @@ def Diag_Decreasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTu
 
 def Diag_Increasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones):
     """This function checks each spot on the board that is diagonal from the target stone. The function checks in the diagonal direction that is down and to the 
-       right starting at the target stone. The function checks for opponent stones between the stone that was just placed on the board and the next stone that
-       belongs to the current player if there is one. To do this it first checks the spot directly diagonal to the placed stone and if that spot is empty then 
-       the function breaks, if that spot is an opponent stone then that stone is added to the stonesToFlip list and the function continues. The function will 
-       keep adding stones to the stonesToFlip list if they are opponent stones and if the loop gets to a stone that belongs to the current player without 
-       encountering an open space first all opponent stones in the stonesToFlip list will be reversed. If the function never reaches another current player stone
-       no stones will be reversed and the next direction will be checked."""
+       right starting at the target stone to see if there are one or more stones that can be reversed."""
 
     print('(6) Checking diagonally rows and cols in increasing order....', end=' ')
     stonesToFlip = []
@@ -240,12 +214,7 @@ def Diag_Increasing(targetRow, targetCol, board, Print_Board, rows, cols, whosTu
 
 def Diag_Rows_Dec_Cols_Inc(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones):
     """This function checks each spot on the board that is diagonal from the target stone. The function checks in the diagonal direction that is up and to the 
-       right starting at the target stone. The function checks for opponent stones between the stone that was just placed on the board and the next stone that
-       belongs to the current player if there is one. To do this it first checks the spot directly diagonal to the placed stone and if that spot is empty then 
-       the function breaks, if that spot is an opponent stone then that stone is added to the stonesToFlip list and the function continues. The function will 
-       keep adding stones to the stonesToFlip list if they are opponent stones and if the loop gets to a stone that belongs to the current player without 
-       encountering an open space first all opponent stones in the stonesToFlip list will be reversed. If the function never reaches another current player stone
-       no stones will be reversed and the next direction will be checked."""
+       right starting at the target stone to see if there are one or more stones that can be reversed."""
 
     print('(7) Checking diagonally rows in increasing order and cols in decreasing order....', end=' ')
     stonesToFlip = []
@@ -280,12 +249,7 @@ def Diag_Rows_Dec_Cols_Inc(targetRow, targetCol, board, Print_Board, rows, cols,
 
 def Diag_Rows_Inc_Cols_Dec(targetRow, targetCol, board, Print_Board, rows, cols, whosTurn, reversedStones):
     """This function checks each spot on the board that is diagonal from the target stone. The function checks in the diagonal direction that is down and to the 
-       left starting at the target stone. The function checks for opponent stones between the stone that was just placed on the board and the next stone that
-       belongs to the current player if there is one. To do this it first checks the spot directly diagonal to the placed stone and if that spot is empty then 
-       the function breaks, if that spot is an opponent stone then that stone is added to the stonesToFlip list and the function continues. The function will 
-       keep adding stones to the stonesToFlip list if they are opponent stones and if the loop gets to a stone that belongs to the current player without 
-       encountering an open space first all opponent stones in the stonesToFlip list will be reversed. If the function never reaches another current player stone
-       no stones will be reversed and the next direction will be checked."""
+       left starting at the target stone to see if there are one or more stones that can be reversed."""
 
     print('(8) Checking diagonally rows in decreasing order and cols in increasing order....', end=' ')
     stonesToFlip = []
