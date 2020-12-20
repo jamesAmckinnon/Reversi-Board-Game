@@ -9,7 +9,7 @@
 
 
 import random
-from neighbours import Row_Decreasing, Row_Increasing, Col_Decreasing, Col_Increasing, Diag_Decreasing, Diag_Increasing, Diag_Rows_Dec_Cols_Inc, Diag_Rows_Inc_Cols_Dec
+from reverseFunctions import Row_Decreasing, Row_Increasing, Col_Decreasing, Col_Increasing, Diag_Decreasing, Diag_Increasing, Diag_Rows_Dec_Cols_Inc, Diag_Rows_Inc_Cols_Dec
 
 
 # allows user to specify the board size they want to play with 
